@@ -9,7 +9,6 @@ script:
   - docker run mbox353/frontend npm run test -- --coverage
 
 deploy:
-  - http://docker-env.3iqmv2jmvp.us-east-2.elasticbeanstalk.com/
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "My First Elastic Beanstalk Application"
