@@ -6,4 +6,4 @@ before_install:
   - docker build -t mbox353/fromtend -f Dockerfile.dev .
 
 script:
-  - docker run mbox353/fronted npm run test -- --coverage
+  - docker run mbox353/frontend npm run test -- --coverage
