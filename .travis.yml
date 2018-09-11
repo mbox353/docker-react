@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run mbox353/frontend npm run test -- --coverage
+
+deploy:
+  - http://docker-env.3iqmv2jmvp.us-east-2.elasticbeanstalk.com/
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "My First Elastic Beanstalk Application"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-646844516110"
+  bucket_path: "My First Elastic Beanstalk Application"
+  on:
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
